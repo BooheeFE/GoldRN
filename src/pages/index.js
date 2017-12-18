@@ -56,16 +56,20 @@ export default class indexPage extends Component<{}> {
     return (
         <View style={styles.container}>
           <View style={styles.swiperBox}>
-            <Swiper style={styles.swiper}
+            <Swiper style={{height:250,width:'100%'}}
                     horizontal={true}
-                    height={250}
-                    autoplay={true}
+                    loop={true}
+                    index={0}
                     showsButtons={false}
+                    autoplay={true}
+                    autoplayTimeout={3}
+                    height={250}
                     paginationStyle={{bottom: 10}}>
               {banners}
             </Swiper>
           </View>
           <Text style={styles.welcome}>首页</Text>
+          <View style={styles.test}></View>
         </View>
     );
   }
@@ -97,4 +101,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  test: {
+    width: 200,
+    height: 200,
+    backgroundColor: '#000'
+  }
 });
