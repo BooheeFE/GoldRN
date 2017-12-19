@@ -13,15 +13,15 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
+
+import NavigationBar from '../components/NavigationBar';
 import MenuItem from '../components/MenuItem';
 
 export default class MyPage extends Component<{}> {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.toolbar}>
-                    <Text style={{fontSize: 20, color: '#333333'}}>我</Text>
-                </View>
+              <NavigationBar title='我' />
                 <TouchableOpacity
                     activeOpacity={0.5}
                     style={styles.my_header}>
@@ -120,13 +120,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#F8F8F8'
     },
-    toolbar: {
-        justifyContent: 'center',
-        height: 48,
-        alignItems: 'center',
-        backgroundColor: '#FFFFFF'
-    },
-
     my_header: {
         height: 100,
         flexDirection: 'row',

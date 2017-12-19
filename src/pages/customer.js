@@ -14,17 +14,16 @@ import {
     Dimensions
 } from 'react-native';
 
+import {IndicatorViewPager, PagerTitleIndicator} from 'rn-viewpager';
+import NavigationBar from '../components/NavigationBar';
 import CustomerList from '../components/CustomerList';
 import CustomerPost from '../components/CustomerPost';
-import {IndicatorViewPager, PagerTitleIndicator} from 'rn-viewpager';
 
 export default class CustomerPage extends Component<{}> {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.toolbar}>
-                    <Text style={{fontSize: 20, color: '#333333'}}>客户</Text>
-                </View>
+                <NavigationBar title='客户' />
                 <View style={styles.dividerStyle}/>
                 <IndicatorViewPager
                     style={{flex: 1, flexDirection: 'column-reverse'}}
@@ -65,13 +64,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column'
     },
-    toolbar: {
-        justifyContent: 'center',
-        height: 48,
-        alignItems: 'center',
-        backgroundColor: '#FFFFFF'
-    },
-
     indicatorContainer: {
         backgroundColor: '#FFFFFF',
         height: 40,

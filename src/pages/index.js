@@ -14,11 +14,12 @@ import {
 } from 'react-native';
 
 import Dimensions from 'Dimensions';
-import MenuItem from '../components/MenuItem'
 
 import {IndicatorViewPager, PagerDotIndicator} from 'rn-viewpager';
 
 import Actions from '../assets/js/request';
+import NavigationBar from '../components/NavigationBar';
+import MenuItem from '../components/MenuItem';
 
 // 屏幕宽度
 let screenWidth = Dimensions.get('window').width;
@@ -66,6 +67,7 @@ export default class indexPage extends Component<{}> {
   render() {
     return (
         <View style={styles.container}>
+          <NavigationBar title='金问号' />
           <IndicatorViewPager indicator={this._renderDotIndicator()}
                               autoPlayEnable={true}
                               style={{height:125}}
