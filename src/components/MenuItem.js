@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     padding:  15,
     height: 60,
     borderBottomWidth: 1,
-    borderBottomColor: '#dfdfdf'
+    borderBottomColor: '#EAECED'
   },
   menuItemIcon: {
     width: 32,

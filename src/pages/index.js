@@ -13,9 +13,10 @@ import {
   View
 } from 'react-native';
 
-import Swiper from 'react-native-swiper';
 import Dimensions from 'Dimensions';
 import MenuItem from '../components/MenuItem'
+
+import {IndicatorViewPager, PagerDotIndicator} from 'rn-viewpager';
 
 import Actions from '../assets/js/request';
 
@@ -30,6 +31,8 @@ export default class indexPage extends Component<{}> {
     };
 
     this.getBanner = this.getBanner.bind(this);
+    this._renderDotIndicator = this._renderDotIndicator.bind(this);
+    this._renderBanner = this._renderBanner.bind(this);
   }
 
   // 组件装载完成
@@ -39,34 +42,36 @@ export default class indexPage extends Component<{}> {
 
   getBanner(){
     Actions.getBanner().then((res) => {
-      console.log('res:',res);
       this.setState({
         banners: res.banners
       })
     })
   }
 
-  render() {
+  _renderDotIndicator(){
+    return <PagerDotIndicator pageCount={this.state.banners.length} />;
+  }
 
-    let banners = this.state.banners.map((u,i) => {
+  _renderBanner(){
+    return this.state.banners.map((u,i) => {
       return (
-          <Image key={u.id} style={styles.images} resizeMode='contain' source={{uri:u.photo_url}} />
+          <View key={u.id}  style={styles.images}>
+            <Image style={styles.images} resizeMode='contain' source={{uri:u.photo_url}} />
+          </View>
       )
     });
+  }
 
+
+  render() {
     return (
         <View style={styles.container}>
-          <Swiper style={{height:125,width:'100%'}}
-                  horizontal={true}
-                  loop={true}
-                  index={0}
-                  showsButtons={false}
-                  autoplay={true}
-                  autoplayTimeout={3}
-                  height={125}
-                  paginationStyle={{bottom: 5}}>
-            {banners}
-          </Swiper>
+          <IndicatorViewPager indicator={this._renderDotIndicator()}
+                              autoPlayEnable={true}
+                              style={{height:125}}
+          >
+            {this._renderBanner()}
+          </IndicatorViewPager>
           <View style={styles.menuItemList}>
             <MenuItem icon={require('../assets/img/ic_tool_recipe.png')} name='营养配餐' />
             <MenuItem icon={require('../assets/img/ic_tool_food.png')} name='食物库' />
@@ -86,14 +91,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F8F8F8'
-  },
-  swiperBox:{
-    width: '100%',
-    height: 125
-  },
-  swiper:{
-    width: '100%',
-    height: 125
   },
   images: {
     width: '100%',

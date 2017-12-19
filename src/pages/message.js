@@ -15,8 +15,6 @@ import {
     ScrollView
 } from 'react-native';
 
-import Swiper from 'react-native-swiper';
-
 let GoldToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2tleSI6ImM3YjJlNzUwNGVmOTQ4ZGFiZmRkMzBhNGUzZDhhMTNiIiwic2lkIjoiNjQ0OGUxNzg5NGU3YmNmNDNmZDgxYmM3IiwiZXhwIjoxNTE2MzMwMTUxfQ.fxwgwQL0cC2NwpmMH8DFggMCRGZP9xv9Anx2sieGuBI';
 
 
