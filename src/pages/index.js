@@ -56,7 +56,7 @@ export default class indexPage extends Component<{}> {
     return this.state.banners.map((u,i) => {
       return (
           <View key={u.id}  style={styles.images}>
-            <Image style={styles.images} resizeMode='contain' source={{uri:u.photo_url}} />
+            <Image style={styles.images} resizeMode='cover' source={{uri:u.photo_url}} />
           </View>
       )
     });
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F8F8'
   },
   images: {
+    margin:0,
     width: '100%',
     height: 125
   },

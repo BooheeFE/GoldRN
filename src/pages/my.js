@@ -103,10 +103,10 @@ export default class MyPage extends Component<{}> {
 
 
                 <View style={styles.menuItemList}>
-                    <MenuItem icon={require('../assets/img/ic_my_order.png')} name='订单管理' />
-                    <MenuItem icon={require('../assets/img/ic_my_in.png')} name='收入管理' />
-                    <MenuItem icon={require('../assets/img/ic_account_setting.png')} name='账号管理' />
-                    <MenuItem icon={require('../assets/img/ic_customer_service.png')} name='联系客服' />
+                    <MenuItem icon={require('../assets/img/ic_my_order.png')} name='订单管理'/>
+                    <MenuItem icon={require('../assets/img/ic_my_in.png')} name='收入管理'/>
+                    <MenuItem icon={require('../assets/img/ic_account_setting.png')} name='账号管理'/>
+                    <MenuItem icon={require('../assets/img/ic_customer_service.png')} name='联系客服'/>
                 </View>
 
             </View>
@@ -144,38 +144,13 @@ const styles = StyleSheet.create({
         width: 255,
         paddingRight: 10,
     },
-
-    memberItem: {
-        height: 60,
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingVertical: 10,
-        backgroundColor: 'white',
-
-    },
-    memberNameWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: 60,
-        width: 360 - 60,
-        paddingRight: 10,
-    },
-    item: {
-        fontSize: 18,
-        marginLeft: 10
-    },
-    img: {
-        width: 25,
-        height: 25,
-        marginLeft: 10
-    },
-    img_right: {
-        width: 10,
-        height: 10,
-    },
     dividerStyle: {
         height: 0.5,
         backgroundColor: '#EAECED'
+    },
+
+    menuItemList: {
+        marginTop: 10,
+        backgroundColor: '#fff'
     },
 });
