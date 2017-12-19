@@ -10,7 +10,8 @@
 		"react": "16.0.0",
 		"react-native": "0.50.4",
 		"react-native-swiper": "^1.5.13",
-		"react-native-tab-navigator": "^0.3.4"
+		"react-native-tab-navigator": "^0.3.4",
+		"rn-viewpager": "^1.2.8"
 	},
 	"devDependencies": {
 		"babel-jest": "21.2.0",
