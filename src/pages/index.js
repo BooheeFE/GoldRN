@@ -69,7 +69,6 @@ export default class indexPage extends Component<{}> {
             </Swiper>
           </View>
           <Text style={styles.welcome}>首页</Text>
-          <View style={styles.test}></View>
         </View>
     );
   }
@@ -100,10 +99,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  },
-  test: {
-    width: 200,
-    height: 200,
-    backgroundColor: '#000'
   }
 });

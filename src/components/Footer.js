@@ -56,7 +56,7 @@ export default class Footer extends Component<{}> {
     return (
         <View style={styles.container}>
           <TabNavigator
-              tabBarStyle={{ height: 50, paddingBottom: 6, backgroundColor:'#dfdfdf'}}>
+              tabBarStyle={{ height: 50, paddingBottom: 6, backgroundColor:'#f8f8f8'}}>
             {this._renderTabarItems('首页',require('../assets/img/index.png'),require('../assets/img/indexSelected.png'),IndexPage)}
             {this._renderTabarItems('客户',require('../assets/img/customer.png'),require('../assets/img/customerSelected.png'),CustomerPage)}
             {this._renderTabarItems('消息',require('../assets/img/message.png'),require('../assets/img/messageSelected.png'),MessagePage)}
@@ -71,7 +71,7 @@ export default class Footer extends Component<{}> {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'#dfdfdf'
+    backgroundColor:'#f8f8f8'
   },
   tabText:{
     color:'#444',
