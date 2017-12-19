@@ -13,6 +13,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
+import MenuItem from '../components/MenuItem';
 
 export default class MyPage extends Component<{}> {
     render() {
@@ -100,54 +101,13 @@ export default class MyPage extends Component<{}> {
                     height: 10
                 }}/>
 
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.memberItem}>
-                    <Image style={styles.img} source={require('../assets/img/ic_my_order.png')}/>
-                    <View style={styles.memberNameWrapper}>
-                        <Text style={styles.item}>订单管理</Text>
-                        <Image style={styles.img_right}
-                               source={require('../assets/img/ic_personal_right.png')}/>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.dividerStyle}/>
 
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.memberItem}>
-                    <Image style={styles.img} source={require('../assets/img/ic_my_in.png')}/>
-                    <View style={styles.memberNameWrapper}>
-                        <Text style={styles.item}>收入管理</Text>
-                        <Image style={styles.img_right}
-                               source={require('../assets/img/ic_personal_right.png')}/>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.dividerStyle}/>
-
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.memberItem}>
-                    <Image style={styles.img} source={require('../assets/img/ic_account_setting.png')}/>
-                    <View style={styles.memberNameWrapper}>
-                        <Text style={styles.item}>账号管理</Text>
-                        <Image style={styles.img_right}
-                               source={require('../assets/img/ic_personal_right.png')}/>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.dividerStyle}/>
-
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.memberItem}>
-                    <Image style={styles.img} source={require('../assets/img/ic_customer_service.png')}/>
-                    <View style={styles.memberNameWrapper}>
-                        <Text style={styles.item}>联系客服</Text>
-                        <Image style={styles.img_right}
-                               source={require('../assets/img/ic_personal_right.png')}/>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.dividerStyle}/>
-
+                <View style={styles.menuItemList}>
+                    <MenuItem icon={require('../assets/img/ic_my_order.png')} name='订单管理' />
+                    <MenuItem icon={require('../assets/img/ic_my_in.png')} name='收入管理' />
+                    <MenuItem icon={require('../assets/img/ic_account_setting.png')} name='账号管理' />
+                    <MenuItem icon={require('../assets/img/ic_customer_service.png')} name='联系客服' />
+                </View>
 
             </View>
         );
