@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding:  15,
     height: 60,
-    borderBottomWidth: 1,
-    borderBottomColor: '#dfdfdf'
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#EAECED'
   },
   menuItemIcon: {
     width: 32,

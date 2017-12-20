@@ -15,10 +15,9 @@ import {
     ScrollView
 } from 'react-native';
 
-import Swiper from 'react-native-swiper';
-
 let GoldToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2tleSI6ImM3YjJlNzUwNGVmOTQ4ZGFiZmRkMzBhNGUzZDhhMTNiIiwic2lkIjoiNjQ0OGUxNzg5NGU3YmNmNDNmZDgxYmM3IiwiZXhwIjoxNTE2MzMwMTUxfQ.fxwgwQL0cC2NwpmMH8DFggMCRGZP9xv9Anx2sieGuBI';
 
+import NavigationBar from '../components/NavigationBar';
 
 export default class MessagePage extends Component<{}> {
     render() {
@@ -74,7 +73,7 @@ export default class MessagePage extends Component<{}> {
     renderData() {
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>消息</Text>
+                <NavigationBar title='消息' />
                 <ScrollView style={{paddingTop: 0, paddingLeft: 0}}>
                     <FlatList
                         data={this.state.dataArray}
@@ -135,13 +134,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         flexDirection: "column"
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        marginTop: 30,
-        marginBottom: 14
-    },
-
     rightContainer: {
         flex: 1,
     },

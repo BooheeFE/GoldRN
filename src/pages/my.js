@@ -14,13 +14,14 @@ import {
     View,
 } from 'react-native';
 
+import NavigationBar from '../components/NavigationBar';
+import MenuItem from '../components/MenuItem';
+
 export default class MyPage extends Component<{}> {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.toolbar}>
-                    <Text style={{fontSize: 20, color: '#333333'}}>我</Text>
-                </View>
+              <NavigationBar title='我' />
                 <TouchableOpacity
                     activeOpacity={0.5}
                     style={styles.my_header}>
@@ -100,54 +101,13 @@ export default class MyPage extends Component<{}> {
                     height: 10
                 }}/>
 
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.memberItem}>
-                    <Image style={styles.img} source={require('../assets/img/ic_my_order.png')}/>
-                    <View style={styles.memberNameWrapper}>
-                        <Text style={styles.item}>订单管理</Text>
-                        <Image style={styles.img_right}
-                               source={require('../assets/img/ic_personal_right.png')}/>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.dividerStyle}/>
 
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.memberItem}>
-                    <Image style={styles.img} source={require('../assets/img/ic_my_in.png')}/>
-                    <View style={styles.memberNameWrapper}>
-                        <Text style={styles.item}>收入管理</Text>
-                        <Image style={styles.img_right}
-                               source={require('../assets/img/ic_personal_right.png')}/>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.dividerStyle}/>
-
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.memberItem}>
-                    <Image style={styles.img} source={require('../assets/img/ic_account_setting.png')}/>
-                    <View style={styles.memberNameWrapper}>
-                        <Text style={styles.item}>账号管理</Text>
-                        <Image style={styles.img_right}
-                               source={require('../assets/img/ic_personal_right.png')}/>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.dividerStyle}/>
-
-                <TouchableOpacity
-                    activeOpacity={0.5}
-                    style={styles.memberItem}>
-                    <Image style={styles.img} source={require('../assets/img/ic_customer_service.png')}/>
-                    <View style={styles.memberNameWrapper}>
-                        <Text style={styles.item}>联系客服</Text>
-                        <Image style={styles.img_right}
-                               source={require('../assets/img/ic_personal_right.png')}/>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.dividerStyle}/>
-
+                <View style={styles.menuItemList}>
+                    <MenuItem icon={require('../assets/img/ic_my_order.png')} name='订单管理'/>
+                    <MenuItem icon={require('../assets/img/ic_my_in.png')} name='收入管理'/>
+                    <MenuItem icon={require('../assets/img/ic_account_setting.png')} name='账号管理'/>
+                    <MenuItem icon={require('../assets/img/ic_customer_service.png')} name='联系客服'/>
+                </View>
 
             </View>
         );
@@ -160,13 +120,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#F8F8F8'
     },
-    toolbar: {
-        justifyContent: 'center',
-        height: 48,
-        alignItems: 'center',
-        backgroundColor: '#FFFFFF'
-    },
-
     my_header: {
         height: 100,
         flexDirection: 'row',
@@ -180,42 +133,17 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        flex: 1,
         height: 60,
-        width: 255,
         paddingRight: 10,
-    },
-
-    memberItem: {
-        height: 60,
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingVertical: 10,
-        backgroundColor: 'white',
-
-    },
-    memberNameWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: 60,
-        width: 360 - 60,
-        paddingRight: 10,
-    },
-    item: {
-        fontSize: 18,
-        marginLeft: 10
-    },
-    img: {
-        width: 25,
-        height: 25,
-        marginLeft: 10
-    },
-    img_right: {
-        width: 10,
-        height: 10,
     },
     dividerStyle: {
         height: 0.5,
         backgroundColor: '#EAECED'
+    },
+
+    menuItemList: {
+        marginTop: 10,
+        backgroundColor: '#fff'
     },
 });
