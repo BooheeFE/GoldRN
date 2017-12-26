@@ -10,7 +10,7 @@ First of all need to install run React Native related to the environment. Please
 ```shell
 git clone https://github.com/BooheeFE/GoldRN.git
 cd GoldRN
-yarn add
+yarn
 react-native run-ios/run-android
 ```
 ## Screenshot
